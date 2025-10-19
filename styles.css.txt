@@ -1,0 +1,418 @@
+/* --- Variables & Reset --- */
+:root {
+    --primary-blue: #003366; /* Bleu Profond - Confiance */
+    --secondary-orange: #ff6600; /* Orange Vif - Action/Urgence */
+    --text-dark: #333;
+    --text-light: #f9f9f9;
+    --bg-light: #f4f6f9;
+    --shadow-deep: 0 10px 30px rgba(0, 51, 102, 0.15); /* Ombre premium */
+    --font-stack: 'Roboto', sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: var(--font-stack);
+}
+
+body {
+    background-color: white;
+    color: var(--text-dark);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* --- HEADER --- */
+.main-header {
+    background-color: var(--primary-blue);
+    padding: 15px 0;
+}
+
+.main-header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: white;
+}
+
+.logo .highlight {
+    color: var(--secondary-orange);
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--text-light);
+    margin-left: 25px;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+nav a i {
+    margin-right: 5px;
+}
+
+nav a:hover {
+    color: var(--secondary-orange);
+}
+
+/* --- HERO SECTION (Le Cœur de la Conversion) --- */
+.hero-section {
+    background: var(--bg-light);
+    padding: 80px 0;
+    text-align: center;
+}
+
+.hero-section .container {
+    display: flex;
+    align-items: flex-start; /* Alignement en haut pour le desktop */
+    justify-content: space-between;
+    gap: 40px;
+}
+
+.hero-content {
+    flex: 1;
+    text-align: left;
+    padding-top: 20px;
+}
+
+.hero-content h1 {
+    font-size: 3rem;
+    color: var(--primary-blue);
+    margin-bottom: 15px;
+}
+
+.hero-content .tagline {
+    font-size: 1.3rem;
+    color: var(--text-dark);
+    font-weight: 400;
+    margin-bottom: 30px;
+}
+
+.reassurance-block {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.reassurance-block span {
+    background-color: white;
+    padding: 10px 15px;
+    border-radius: 50px;
+    font-weight: 500;
+    font-size: 0.95rem;
+    color: var(--primary-blue);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.reassurance-block i {
+    color: var(--secondary-orange);
+    margin-right: 8px;
+}
+
+/* --- FORMULAIRE CARD --- */
+.form-card {
+    flex-basis: 400px; /* Taille fixe pour le formulaire */
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: var(--shadow-deep);
+    text-align: left;
+    position: relative;
+}
+
+/* --- PROGRESS BAR --- */
+.progress-bar-container {
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+#step-info {
+    display: block;
+    color: var(--primary-blue);
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+#step-indicator {
+    height: 8px;
+    background: #e0e0e0;
+    border-radius: 4px;
+    position: relative;
+    overflow: hidden;
+}
+
+#step-indicator::after {
+    content: '';
+    display: block;
+    height: 100%;
+    background: var(--secondary-orange);
+    transition: width 0.4s ease-in-out;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.step-1::after { width: 33.3%; }
+.step-2::after { width: 66.6%; }
+.step-3::after { width: 100%; }
+
+/* --- ÉTAPES DU FORMULAIRE --- */
+.form-step {
+    display: none;
+    opacity: 0;
+    transition: opacity 0.4s;
+}
+
+.form-step.active {
+    display: block;
+    opacity: 1;
+}
+
+.form-step h2 {
+    font-size: 1.4rem;
+    color: var(--text-dark);
+    margin-bottom: 25px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #eee;
+}
+
+.urgency-message {
+    background-color: #fff3e0; /* Couleur très claire pour l'urgence */
+    color: #e65100;
+    padding: 12px;
+    border-radius: 6px;
+    margin-bottom: 20px;
+    font-weight: 500;
+    border: 1px solid #ffcc80;
+}
+
+.urgency-message i {
+    margin-right: 8px;
+    animation: flash 1s infinite alternate; /* Animation pour attirer l'oeil */
+}
+
+@keyframes flash {
+    from { opacity: 1; }
+    to { opacity: 0.7; }
+}
+
+
+label {
+    display: block;
+    margin-top: 15px;
+    margin-bottom: 5px;
+    font-weight: 500;
+    color: #555;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="date"],
+input[type="number"] {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1rem;
+    transition: border-color 0.3s;
+    margin-bottom: 15px;
+}
+
+input:focus {
+    border-color: var(--secondary-orange);
+    box-shadow: 0 0 0 3px rgba(255, 102, 0, 0.2);
+    outline: none;
+}
+
+/* --- BOUTONS --- */
+button {
+    border: none;
+    padding: 14px 25px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 700;
+    transition: background-color 0.3s, transform 0.1s;
+    margin-top: 10px;
+}
+
+.btn-next {
+    background-color: var(--primary-blue);
+    color: white;
+    width: 100%;
+}
+.btn-next:hover {
+    background-color: #004d99;
+}
+
+.btn-prev {
+    background-color: #ddd;
+    color: var(--text-dark);
+}
+.btn-prev:hover {
+    background-color: #ccc;
+}
+
+.btn-group {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.btn-group button {
+    flex: 1;
+}
+
+.btn-submit {
+    background-color: var(--secondary-orange); /* CTA fort */
+    color: white;
+}
+.btn-submit:hover {
+    background-color: #cc5200;
+}
+
+
+/* --- SECTIONS SECONDAIRES (AVANTAGES ET TEMOIGNAGES) --- */
+
+.key-features, .testimonials-section {
+    padding: 60px 0;
+    text-align: center;
+}
+
+.key-features {
+    background-color: white;
+}
+.testimonials-section {
+    background-color: var(--bg-light);
+}
+
+h2 {
+    font-size: 2rem;
+    color: var(--primary-blue);
+    margin-bottom: 40px;
+}
+
+/* Grille des Avantages */
+.feature-grid {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+}
+
+.feature-grid div {
+    flex-basis: 30%;
+    padding: 20px;
+    border-radius: 8px;
+    background: white;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+}
+
+.feature-grid i {
+    color: var(--secondary-orange);
+    margin-bottom: 15px;
+}
+
+.feature-grid h3 {
+    font-size: 1.25rem;
+    margin-bottom: 10px;
+    color: var(--text-dark);
+}
+
+/* Grille des Témoignages */
+.testimonial-grid {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+.testimonial-card {
+    flex-basis: 45%;
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: var(--shadow-deep);
+    border-top: 4px solid var(--secondary-orange);
+    text-align: left;
+}
+
+.testimonial-card p {
+    font-style: italic;
+    margin-bottom: 15px;
+}
+
+.client-name {
+    font-weight: 700;
+    color: var(--primary-blue);
+    display: block;
+}
+
+/* --- FOOTER --- */
+footer {
+    background-color: var(--primary-blue);
+    color: var(--text-light);
+    padding: 20px 0;
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+/* --- RESPONSIVITÉ (Mobile) --- */
+@media (max-width: 900px) {
+    .hero-section .container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .hero-content {
+        text-align: center;
+        padding-top: 0;
+        margin-bottom: 40px;
+    }
+    
+    .hero-content h1 {
+        font-size: 2.2rem;
+    }
+    
+    .reassurance-block {
+        justify-content: center;
+    }
+
+    .form-card {
+        flex-basis: 100%;
+        width: 100%;
+        max-width: 450px; /* Limiter la largeur sur mobile pour le confort */
+    }
+
+    .feature-grid, .testimonial-grid {
+        flex-direction: column;
+    }
+    
+    .feature-grid div, .testimonial-card {
+        flex-basis: 100%;
+    }
+}
+
+@media (max-width: 500px) {
+    .main-header .container {
+        flex-direction: column;
+    }
+    nav {
+        margin-top: 10px;
+    }
+    nav a {
+        margin: 0 10px;
+        font-size: 0.85rem;
+    }
+}

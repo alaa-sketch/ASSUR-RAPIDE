@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ASSUR-RAPIDE : Votre Devis Assurance Emprunteur Gratuit en 2 min</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> 
+</head>
+<body>
+
+    <header class="main-header">
+        <div class="container">
+            <div class="logo">ASSUR-<span class="highlight">RAPIDE</span></div>
+            <nav>
+                <a href="#avantages"><i class="fas fa-hand-holding-usd"></i> Économies</a>
+                <a href="#temoignages"><i class="fas fa-star"></i> Avis Clients</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero-section">
+            <div class="container">
+                <div class="hero-content">
+                    <h1>Divisez votre Coût d'Assurance Emprunteur</h1>
+                    <p class="tagline">Gagnez du temps. Gagnez de l'argent. Réponse Immédiate garantie pour un contact ultra-rapide.</p>
+                    
+                    <div class="reassurance-block">
+                        <span><i class="fas fa-clock"></i> Contact en moins de 5 min !</span>
+                        <span><i class="fas fa-check-circle"></i> Conformité Loi Lemoine</span>
+                        <span><i class="fas fa-lock"></i> Données Sécurisées</span>
+                    </div>
+                </div>
+
+                <div class="form-card">
+                    <div class="progress-bar-container">
+                        <span id="step-info">Étape 1 sur 3 - Votre Prêt</span>
+                        <div id="step-indicator" class="step-1"></div>
+                    </div>
+                    
+                    <form id="leadForm" action="https://formspree.io/f/xdkwbzyy" method="POST">
+                        
+                        <div class="form-step active" data-step="1">
+                            <h2>1. Informations sur votre Prêt</h2>
+                            
+                            <label for="montant_pret">Montant total à assurer (€) :</label>
+                            <input type="number" id="montant_pret" name="Montant_Pret" required placeholder="Ex: 200 000" min="10000">
+
+                            <label for="duree_pret">Durée du Prêt (années) :</label>
+                            <input type="number" id="duree_pret" name="Duree_Pret" required placeholder="Ex: 20" min="5" max="30">
+                            
+                            <button type="button" class="btn-next">SUIVANT <i class="fas fa-arrow-right"></i></button>
+                        </div>
+
+                        <div class="form-step" data-step="2">
+                            <h2>2. Votre Profil Assuré</h2>
+                            
+                            <label for="date_naissance">Date de Naissance :</label>
+                            <input type="date" id="date_naissance" name="Date_Naissance" required>
+
+                            <label for="profession">Profession :</label>
+                            <input type="text" id="profession" name="Profession" required placeholder="Ex: Cadre, Artisan, Professeur">
+                            
+                            <div class="btn-group">
+                                <button type="button" class="btn-prev"><i class="fas fa-arrow-left"></i> RETOUR</button>
+                                <button type="button" class="btn-next">SUIVANT <i class="fas fa-arrow-right"></i></button>
+                            </div>
+                        </div>
+
+                        <div class="form-step" data-step="3">
+                            <h2>3. Recevez votre Devis (Contact Rapide !)</h2>
+                            
+                            <p class="urgency-message"><i class="fas fa-bell"></i> Nous vous contactons IMMÉDIATEMENT pour valider votre économie potentielle.</p>
+
+                            <label for="nom">Nom Complet :</label>
+                            <input type="text" id="nom" name="Nom" required placeholder="Votre Nom et Prénom">
+
+                            <label for="email">Email :</label>
+                            <input type="email" id="email" name="_replyto" required placeholder="exemple@mail.com">
+
+                            <label for="telephone">Téléphone :</label>
+                            <input type="tel" id="telephone" name="Telephone" required placeholder="06 XX XX XX XX">
+                            
+                            <input type="hidden" name="_subject" value="URGENT: NOUVEAU LEAD ASSURANCE EMPRUNTEUR (ASSUR-RAPIDE)">
+                            <input type="hidden" name="Source_Lead" value="Landing Page V2">
+                            <input type="hidden" name="_next" value="[URL_DE_VOTRE_PAGE_DE_REMERCIEMENT_ASSUR_RAPIDE]">
+
+                            <div class="btn-group">
+                                <button type="button" class="btn-prev"><i class="fas fa-arrow-left"></i> RETOUR</button>
+                                <button type="submit" id="submit-btn" class="btn-submit">OUI, JE VEUX MON DEVIS GRATUIT !</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                </div>
+        </section>
+
+        <section id="avantages" class="key-features">
+            <div class="container">
+                <h2>Pourquoi Choisir ASSUR-RAPIDE ?</h2>
+                <div class="feature-grid">
+                    <div>
+                        <i class="fas fa-bolt fa-3x"></i>
+                        <h3>Réactivité Instantanée</h3>
+                        <p>Nos experts sont alertés dès l'envoi de votre formulaire pour vous contacter en moins de 5 minutes. Zéro délai.</p>
+                    </div>
+                    <div>
+                        <i class="fas fa-euro-sign fa-3x"></i>
+                        <h3>Économies Garanties</h3>
+                        <p>Nous comparons les meilleures offres du marché pour vous faire économiser en moyenne 40% sur votre assurance actuelle.</p>
+                    </div>
+                    <div>
+                        <i class="fas fa-cogs fa-3x"></i>
+                        <h3>Processus Simplifié</h3>
+                        <p>Votre demande de changement d'assurance est gérée de A à Z par nos courtiers. Simplicité et efficacité maximale.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="temoignages" class="testimonials-section">
+            <div class="container">
+                <h2>L'avis de nos clients (4.9/5 ⭐⭐⭐⭐⭐)</h2>
+                <div class="testimonial-grid">
+                    <div class="testimonial-card">
+                        <p>"Contacté en 3 minutes chrono. Le processus était clair et j'ai économisé 12 000€ au total. Bluffant !"</p>
+                        <span class="client-name">- David M. (Paris)</span>
+                    </div>
+                    <div class="testimonial-card">
+                        <p>"Un service à la fois humain et rapide. L'expert m'a guidé parfaitement pour profiter de la Loi Lemoine."</p>
+                        <span class="client-name">- Sofia L. (Lyon)</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 ASSUR-RAPIDE. Tous droits réservés. | Mentions Légales | Politique de Confidentialité</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
